@@ -1,4 +1,4 @@
-/* General styles */
+/* Global Reset and Base */
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #f9f9f9;
+  background: #f4f4f4;
   color: #333;
   line-height: 1.6;
 }
@@ -17,38 +17,43 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #222;
+  background-color: #1e1e1e;
   color: #fff;
-  padding: 15px 30px;
+  padding: 20px 40px;
+  flex-wrap: wrap;
 }
 
 header h1 {
-  font-size: 24px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
-  margin-left: 20px;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
   color: #ff9800;
-  transition: 0.3s;
 }
 
-/* Hero section */
+/* Hero Section */
 .hero {
-  height: 70vh;
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, #ff9800, #ff5722);
-  color: white;
-  text-align: center;
-  padding: 20px;
 }
 
 .hero h2 {
@@ -62,42 +67,42 @@ nav a:hover {
 }
 
 .hero button {
-  background: #fff;
+  background-color: #fff;
   color: #ff5722;
   border: none;
-  padding: 12px 25px;
+  padding: 14px 30px;
   font-size: 16px;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .hero button:hover {
-  background: #ffebee;
+  background-color: #ffe0b2;
   transform: scale(1.05);
 }
 
-/* Products section */
+/* Products Section */
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 50px 40px;
 }
 
 .product-card {
-  background: #fff;
-  padding: 20px;
+  background-color: #fff;
   border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .product-card img {
@@ -107,48 +112,97 @@ nav a:hover {
 }
 
 .product-card h3 {
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 10px;
 }
 
 .product-card p {
   font-size: 18px;
-  font-weight: bold;
   color: #ff5722;
+  font-weight: bold;
   margin-bottom: 15px;
 }
 
 .product-card button {
-  background: #ff5722;
-  color: white;
+  background-color: #ff5722;
+  color: #fff;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 10px 22px;
   font-weight: 600;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .product-card button:hover {
-  background: #e64a19;
+  background-color: #e64a19;
   transform: scale(1.05);
 }
 
 /* Footer */
 footer {
-  background: #222;
+  background-color: #1e1e1e;
   color: #fff;
   text-align: center;
-  padding: 15px 0;
+  padding: 20px 0;
+  font-size: 14px;
   margin-top: 40px;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .hero h2 {
-    font-size: 32px;
+  header {
+    flex-direction: column;
+    align-items: flex-start;
   }
+
+  nav {
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .hero h2 {
+    font-size: 36px;
+  }
+
   .hero p {
     font-size: 18px;
+  }
+
+  .products {
+    padding: 30px 20px;
+  }
+
+  .product-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .product-card h3 {
+    font-size: 18px;
+  }
+
+  .product-card p {
+    font-size: 16px;
+  }
+
+  .product-card button {
+    padding: 8px 16px;
+    font-size: 14px;
   }
 }
